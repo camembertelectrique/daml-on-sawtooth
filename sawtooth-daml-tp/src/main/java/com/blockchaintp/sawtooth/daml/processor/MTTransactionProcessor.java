@@ -45,7 +45,7 @@ import sawtooth.sdk.protobuf.TpRegisterRequest;
  */
 public class MTTransactionProcessor implements Runnable {
 
-  private static final int DEFAULT_MAX_THREADS = 4;
+  private static final int DEFAULT_MAX_THREADS = 1;
 
   private static final Logger LOGGER = Logger.getLogger(MTTransactionProcessor.class.getName());
 
