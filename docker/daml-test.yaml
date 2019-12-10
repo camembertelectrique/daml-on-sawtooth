@@ -32,10 +32,6 @@ services:
       - 4004
       - 8800
       - 5050
-    ports:
-      - "4004:4004"
-      - "8800:8800"
-      - "5050:5050"
     entrypoint: "bash -c \"\
         sawadm keygen && \
         sawtooth keygen && \
@@ -73,8 +69,6 @@ services:
     image: hyperledger/sawtooth-rest-api:1.1
     expose:
       - 8008
-    ports:
-      - "8008:8008"
     depends_on:
       - validator
     entrypoint: sawtooth-rest-api  --connect tcp://validator:4004 --bind rest-api:8008
@@ -96,9 +90,6 @@ services:
     expose:
       - 9000
       - 5051
-    ports:
-      - "9000:9000"
-      - "5051:5051"
     entrypoint: "bash -c \"\
       /opt/sawtooth-daml-rpc/entrypoint.sh --port 9000 \
         --connect tcp://validator:4004 \
